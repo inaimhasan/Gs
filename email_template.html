@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #1e2329; margin: 0; padding: 0; background-color: #ffffff; }
+    .wrapper { width: 100%; table-layout: fixed; background-color: #f0f2f5; padding: 40px 0; }
+    .main { background-color: #ffffff; margin: 0 auto; width: 100%; max-width: 600px; border-spacing: 0; font-family: sans-serif; color: #4e5661; border-radius: 8px; }
+    .content { padding: 20px; }
+    .header { text-align: center; padding: 40px 0 20px 0; }
+    .success-icon { color: #0ecb81; font-size: 60px; line-height: 60px; }
+    .title { font-size: 24px; font-weight: 600; color: #1e2329; margin: 10px 0 30px 0; }
+    .info-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    .info-table td { padding: 12px 0; border-bottom: 1px solid #f0f2f5; font-size: 14px; }
+    .info-table td.label { color: #707a8a; text-align: left; }
+    .info-table td.value { color: #1e2329; text-align: right; font-weight: 500; }
+    .note { font-size: 13px; color: #707a8a; line-height: 1.6; margin: 20px 0; }
+    .footer { border-top: 1px solid #f0f2f5; padding-top: 30px; text-align: left; }
+    .stay-connected { color: #f0b90b; font-weight: 600; font-size: 18px; margin-bottom: 20px; text-align: center; }
+    .anti-phishing-box { background-color: #f0f2f5; padding: 15px; border-radius: 4px; margin: 20px 0; display: block; }
+    .anti-phishing-label { background-color: #f0b90b; padding: 2px 8px; border-radius: 2px; font-weight: 600; color: #1e2329; font-size: 12px; margin-right: 10px; }
+    .anti-phishing-code { font-family: monospace; font-size: 16px; font-weight: 600; color: #1e2329; }
+    .disclaimer { font-size: 11px; color: #707a8a; line-height: 1.5; text-align: justify; margin-top: 20px; }
+    .copyright { font-size: 12px; color: #707a8a; margin-top: 20px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <table class="main" align="center">
+      <tr>
+        <td class="content">
+          <div class="header">
+            <div class="success-icon">✓</div>
+            <div class="title">Payment Successful</div>
+          </div>
+
+          <table class="info-table">
+            <tr>
+              <td class="label">Payment Time</td>
+              <td class="value"><?= timestamp ?></td>
+            </tr>
+            <tr>
+              <td class="label">Amount</td>
+              <td class="value"><?= amount ?> <?= currency ?></td>
+            </tr>
+            <tr>
+              <td class="label">Pay ID</td>
+              <td class="value"><?= payId ?></td>
+            </tr>
+            <tr>
+              <td class="label" style="border-bottom: none;">Order ID</td>
+              <td class="value" style="border-bottom: none;"><?= orderId ?></td>
+            </tr>
+          </table>
+
+          <div class="note">
+            You have successfully paid <?= amount ?> <?= currency ?> to Pay ID <?= payId ?> via Binance Pay.
+            <br><br>
+            <i>This is an automated message, please do not reply.</i>
+          </div>
+
+          <div class="footer">
+            <div class="stay-connected">Stay connected!</div>
+            
+            <div style="text-align: center; margin-bottom: 20px;">
+              <!-- Social placeholders -->
+              <span style="margin: 0 5px; color: #707a8a;">𝕏</span>
+              <span style="margin: 0 5px; color: #707a8a;">✈</span>
+              <span style="margin: 0 5px; color: #707a8a;">f</span>
+              <span style="margin: 0 5px; color: #707a8a;">in</span>
+              <span style="margin: 0 5px; color: #707a8a;">▶</span>
+            </div>
+
+            <div style="text-align: right; margin-bottom: 10px;">
+              <span style="background-color: #f0b90b; padding: 2px 8px; font-weight: 600; font-size: 12px;">Anti-phishing</span>
+              <div style="margin-top: 5px; font-family: monospace; font-size: 16px; font-weight: bold;"><?= antiPhishingCode ?></div>
+            </div>
+
+            <div class="disclaimer">
+              <strong>Disclaimer:</strong> Digital asset prices are subject to high market risk and price volatility. The value of your investment may go down or up, and you may not get back the amount invested. You are solely responsible for your investment decisions and Binance is not liable for any losses you may incur. Past performance is not a reliable predictor of future performance. You should only invest in products you are familiar with and where you understand the risks. You should carefully consider your investment experience, financial situation, investment objectives and risk tolerance and consult an independent financial adviser prior to making any investment.
+            </div>
+
+            <div class="copyright">
+              © 2026 Binance.com, All Rights Reserved.
+            </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
